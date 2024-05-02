@@ -19,7 +19,6 @@
             android:theme="@style/Theme.Material3.DayNight" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -31,9 +30,9 @@
             <intent-filter>
                 <action android:name="android.service.autofill.AutofillService" />
             </intent-filter>
+            <meta-data
+                android:name="android.autofill"
+                android:resource="@xml/service_configuration" />
         </service>
     </application>
-
-
-
 </manifest>

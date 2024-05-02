@@ -27,7 +27,17 @@ class InputPurposeAutofill : AutofillService() {
     ) {
         val context: List<FillContext> = request.fillContexts
         val structure: AssistStructure = context[context.size - 1].structure
-        traverseStructure(structure)
+
+        if(request.flags and FillRequest.FLAG_COMPATIBILITY_MODE_REQUEST != 0) {
+            Toast.makeText(this.applicationContext, "WebView unsupported", Toast.LENGTH_SHORT)
+                .show()
+        } else {
+            traverseStructure(structure)
+        }
+    }
+
+    override fun onCreate() {
+        super.onCreate()
     }
 
     override fun onSaveRequest(request: SaveRequest, callback: SaveCallback) {
@@ -59,6 +69,9 @@ class InputPurposeAutofill : AutofillService() {
                 Toast.makeText(this.applicationContext, output, Toast.LENGTH_SHORT)
                     .show()
             }
+        } else if (viewNode?.autofillHints?.isEmpty() == true && viewNode.isFocused) {
+            Toast.makeText(this.applicationContext, "No autofill hints found", Toast.LENGTH_SHORT)
+                .show()
         }
 
         val children: List<AssistStructure.ViewNode>? =
