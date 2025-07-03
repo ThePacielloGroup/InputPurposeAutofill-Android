@@ -19,4 +19,3 @@ Autofill values should correspond with the Autofill values that are provided for
 ## WebViews
 
 WebViews are built differently and do not expose the autofill values in the expected way. Some WebView providers outside of Chrome may support autofill properly, but Chrome WebViews do not. 
-
