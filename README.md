@@ -9,6 +9,17 @@ Once installed, the app will appear in the app drawer under "Input Purpose Autof
 * Make sure the "Input Purpose AutoFill" app is selected as the provider. 
 ![](screenshots/autofill-selector.png)
 
+## Enabling Notification for the Autofill Service
+
+In order to provide toast notificaitons, the app needs notification permissions. Keep in mind that the actual steps below may be different for your device, but they should be pretty close. 
+
+* Open the Settings app
+* Go to "Notifications"
+* Go to "App Notifications"
+* You may have to change the filter from "Most recent" to "All apps"
+* Scroll down until you find "InputPurposeAutofill"
+* Make sure the switch for notifications is turned on
+
 ## Exposing the AutoFill value
 
 After the app is set at the Autofill provider, when you click on a field that is exposed to autofill services and it has an autofill value, a toast message will appear with the autofill value.
