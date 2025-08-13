@@ -23,6 +23,7 @@ In order to provide toast notificaitons, the app needs notification permissions.
 ## Exposing the AutoFill value
 
 After the app is set at the Autofill provider, when you click on a field that is exposed to autofill services and it has an autofill value, a toast message will appear with the autofill value.
+
 ![](screenshots/Autofill-hint-toast.png)
 
 Autofill values should correspond with the Autofill values that are provided for Android. More information on autofill can be found at from Google's article on [optimizing apps for autofill](https://developer.android.com/identity/autofill/autofill-optimize). If a toast message does not pop up when a field is focused, then that field is not exposed to autofill services and would fail 1.3.5 Input Purpose. Keep in mind the autofill service doesn't always receive information every time a field is focused especially if there are multiple fields on a single screen. For proper testing, return to a previous screen and return the screen to be tested to reload the content, place focus on the field that you want to test, if the toast does not appear, the field is not exposed for autofill. 
